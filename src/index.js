@@ -1,6 +1,9 @@
 const express = require('express');
+const { dbConnection } = require('./db/config');
 require('dotenv').config();
 const app = express();
+
+dbConnection();
 
 // Habilitar carpeta public
 app.use(express.static('public'));
