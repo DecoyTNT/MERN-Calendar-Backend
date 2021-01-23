@@ -83,9 +83,12 @@ const revalidateToken = async (req, res) => {
 
         const token = await generateToken(uid, name);
 
+        const user = await User.findById(uid);
+
         res.json({
             ok: true,
-            token
+            token,
+            user
         });
     } catch (error) {
         console.log(error);
