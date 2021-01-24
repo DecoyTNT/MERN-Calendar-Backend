@@ -21,7 +21,7 @@ router.post(
     '/',
     [
         check('email', 'El email es obligatorio').isEmail(),
-        check('password', 'El password debe tener al menos 6 carácteres').isLength({ min: 6 }),
+        check('password', 'El password es obligatorio').not().isEmpty(),
         validateFields
     ],
     loginUser
